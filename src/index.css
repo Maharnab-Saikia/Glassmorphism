@@ -1,0 +1,231 @@
+:root {
+  --textColor: #000;
+  --radius: 10px;
+  --blur: 4px;
+  --transperency: 0.25;
+  --color: 255, 255, 255;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  background: #045de9;
+  background-image: linear-gradient(-45deg, #045de9 0%, #09c6f9 74%);
+  color: var(--textColor);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  margin: 20px 0;
+  z-index: 1;
+}
+
+.preview {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.glassmorphism {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  position: relative;
+
+  border-radius: var(--radius);
+  background: rgb( var(--color),var(--transperency));
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glass1 {
+  width: 50px;
+  height: 50px;
+  top: 60px;
+  left: 270px;
+  z-index: 1;
+  position: absolute;
+
+  border-radius: 5px;
+  background: rgb(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  animation-name: glass1;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes glass1 {
+  from  {top:60px;}
+  to {top:65px;}
+}
+
+.glass2 {
+  width: 80px;
+  height: 80px;
+  top: 140px;
+  left: -50px;
+  z-index: 3;
+  position: absolute;
+
+  border-radius: 5px;
+  background: rgb(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  animation-name: glass2;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes glass2 {
+  from  {top:140px;}
+  to {top:145px;}
+}
+
+.glass3 {
+  width: 100px;
+  height: 100px;
+  top: 220px;
+  left: 225px;
+  z-index: 2;
+  position: absolute;
+
+  border-radius: 5px;
+  background: rgb(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  animation-name: glass3;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes glass3 {
+  from  {top:220px;}
+  to {top:225px;}
+}
+
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto 30px;
+  border-radius: 10px;
+
+  /*border: 1px solid hsla(0,0%,100%,.11);*/
+  /*background-color: #213a5a;*/
+
+  background: rgb(255, 255, 255, 0.20);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  display: flex;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.configuration {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  /*background-color: rgba(0, 0, 0, 0.61);*/
+}
+
+.config-color {
+  display: flex;
+}
+
+.code {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.61);
+  border-radius: 5px;
+}
+
+.code textarea {
+  background: transparent;
+  color: #000;
+  width: inherit;
+  line-height: 140%;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.copy {
+  opacity: 1;
+  width: 50px;
+  height: 25px;
+
+  float: right;
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  color: #fff;
+  background-color: dodgerblue;
+}
+
+@media (max-width: 800px) {
+  .title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .container {
+    display: block;
+    margin: 25px auto 0;
+  }
+  .configuration {
+    width: unset;
+  }
+  .row {
+    margin-bottom: 0;
+  }
+  .code {
+    width: unset;
+  }
+  .code textarea {
+    width: 100%;
+  }
+}
+
